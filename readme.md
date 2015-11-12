@@ -2,4 +2,4 @@
 
 ### Hard
 
-- [ ] longest common subsequences
+- [ ] longest common subsequence
