@@ -19,8 +19,12 @@ fill_strings(char *line, char *str1, char *str2)
         return -1;
       found_semicolon = 1;
       to = str2;
+      ++from;
     }
-    *to++ = *from++;
+    if (isspace(*from))
+      ++from;
+    else
+      *to++ = *from++;
   }
 
   if (!found_semicolon)
@@ -36,7 +40,7 @@ longest_common_subsequence(char *line, char *answer)
   if (fill_strings(line, str1, str2) < 0)
     return NULL;
 
-  
+
 
   return answer;
 }
