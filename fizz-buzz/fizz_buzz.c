@@ -3,7 +3,8 @@
 #include <string.h>
 
 static void
-fizz_buzz(char *line) {
+fizz_buzz(char *line)
+{
   int x, y, n;
   char buf[8];
   sscanf(line, " %d %d %d ", &x, &y, &n);
