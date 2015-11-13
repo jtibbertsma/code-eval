@@ -11,3 +11,4 @@
 ### Hard
 
 - [ ] longest common subsequence
+- [x] string permutations
