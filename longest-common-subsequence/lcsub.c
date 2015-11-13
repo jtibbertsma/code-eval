@@ -20,16 +20,21 @@ fill_strings(char *line, char *str1, char *str2)
       found_semicolon = 1;
       to = str2;
       ++from;
-    }
-    if (isspace(*from))
-      ++from;
-    else
-      *to++ = *from++;
+    }*to++ = *from++;
   }
 
-  if (!found_semicolon)
+  if (!found_semicolon || strlen(str1) == 0 || strlen(str2) == 0)
     return -1;
   return 0;
+}
+
+static char *
+ensure_no_trailing_whitespace(char *str) {
+  char *end = str + strlen(str);
+  while (isspace(*--end)) {
+    *end = '\0';
+  }
+  return str;
 }
 
 static char *
@@ -68,7 +73,7 @@ main(int argc, const char * argv[])
     memset(ans_buf, 0, 64);
     answer = longest_common_subsequence(line, ans_buf);
 
-    if (answer) printf("%s\n", answer);
+    if (answer) printf("%s\n", ensure_no_trailing_whitespace(answer));
   }
   return 0;
 } 
