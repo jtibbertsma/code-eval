@@ -3,6 +3,7 @@
 ### Easy
 
 - [x] fizz buzz
+- [x] even numbers
 
 ### Medium
 
