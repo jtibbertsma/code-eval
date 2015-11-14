@@ -9,6 +9,7 @@
 ### Medium
 
 - [x] longest lines
+- [x] stack implementation
 
 ### Hard
 
