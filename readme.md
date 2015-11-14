@@ -13,4 +13,5 @@
 ### Hard
 
 - [ ] longest common subsequence
+- [ ] decryption
 - [x] string permutations
