@@ -5,6 +5,7 @@
 - [x] fizz buzz
 - [x] even numbers
 - [x] sum of primes
+- [x] multiplication tables
 
 ### Medium
 
