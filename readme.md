@@ -17,3 +17,4 @@
 - [ ] longest common subsequence
 - [ ] decryption
 - [x] string permutations
+- [ ] lights out
