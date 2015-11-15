@@ -11,6 +11,7 @@
 
 - [x] longest lines
 - [x] stack implementation
+- [x] reverse and add
 
 ### Hard
 
