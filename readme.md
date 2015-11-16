@@ -19,3 +19,5 @@
 - [ ] decryption
 - [x] string permutations
 - [ ] lights out
+- [ ] type ahead
+- [ ] brainfuck
