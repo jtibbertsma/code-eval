@@ -6,6 +6,8 @@
 - [x] even numbers
 - [x] sum of primes
 - [x] multiplication tables
+- [x] reverse words
+- [x] multiples of a number
 
 ### Medium
 
