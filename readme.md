@@ -10,7 +10,7 @@
 - [x] multiples of a number
 - [x] bit positions
 - [x] sum of digits
- -[x] lowercase
+- [x] lowercase
 
 ### Medium
 
