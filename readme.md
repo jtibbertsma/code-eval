@@ -14,11 +14,12 @@
 - [x] fibonacci
 - [x] sum of ints
 
-### Medium
+### Moderate
 
 - [x] longest lines
 - [x] stack implementation
 - [x] reverse and add
+- [x] mth to last list item
 
 ### Hard
 
