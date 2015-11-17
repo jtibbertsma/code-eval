@@ -9,6 +9,7 @@
 - [x] reverse words
 - [x] multiples of a number
 - [x] bit positions
+- [x] sum of digits
 
 ### Medium
 
