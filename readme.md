@@ -8,6 +8,7 @@
 - [x] multiplication tables
 - [x] reverse words
 - [x] multiples of a number
+- [x] bit positions
 
 ### Medium
 
