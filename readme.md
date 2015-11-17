@@ -12,6 +12,7 @@
 - [x] sum of digits
 - [x] lowercase
 - [x] fibonacci
+- [x] sum of ints
 
 ### Medium
 
