@@ -11,6 +11,7 @@
 - [x] bit positions
 - [x] sum of digits
 - [x] lowercase
+- [x] fibonacci
 
 ### Medium
 
