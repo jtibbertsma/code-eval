@@ -21,6 +21,7 @@
 - [x] stack implementation
 - [x] reverse and add
 - [x] mth to last list item
+- [x] valid parenthses
 
 ### Hard
 
