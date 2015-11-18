@@ -13,6 +13,7 @@
 - [x] lowercase
 - [x] fibonacci
 - [x] sum of ints
+- [x] odd numbers
 
 ### Moderate
 
