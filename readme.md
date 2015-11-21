@@ -14,6 +14,7 @@
 - [x] fibonacci
 - [x] sum of ints
 - [x] odd numbers
+- [x] strings and arrows
 
 ### Moderate
 
