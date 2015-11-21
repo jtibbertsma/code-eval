@@ -15,6 +15,7 @@
 - [x] sum of ints
 - [x] odd numbers
 - [x] strings and arrows
+- [x] file size
 
 ### Moderate
 
