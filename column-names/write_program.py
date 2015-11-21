@@ -48,4 +48,5 @@ def increment_char(chars, index):
     else:
       increment_char(chars, index-1)
 
-main()
+if __name__ == '__main__':
+  main()

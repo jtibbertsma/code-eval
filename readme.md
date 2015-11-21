@@ -22,6 +22,7 @@
 - [x] reverse and add
 - [x] mth to last list item
 - [x] valid parenthses
+- [x] alternative reality
 
 ### Hard
 

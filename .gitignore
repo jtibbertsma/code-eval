@@ -1,5 +1,6 @@
 .DS_Store
 *.o
+__pycache__
 lcsub
 fizz_buzz
 longest
@@ -21,3 +22,5 @@ cols.c
 odd
 valid
 balanced
+alt
+junk.txt
