@@ -25,6 +25,7 @@
 - [x] mth to last list item
 - [x] valid parenthses
 - [x] alternative reality
+- [x] prime numbers
 
 ### Hard
 
