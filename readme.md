@@ -16,6 +16,7 @@
 - [x] odd numbers
 - [x] strings and arrows
 - [x] file size
+- [x] ones and zeros
 
 ### Moderate
 
