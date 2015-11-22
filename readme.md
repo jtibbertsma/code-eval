@@ -27,6 +27,7 @@
 - [x] valid parenthses
 - [x] alternative reality
 - [x] prime numbers
+- [x] decimal to binary
 
 ### Hard
 
