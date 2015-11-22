@@ -34,3 +34,4 @@
 - [ ] lights out
 - [ ] type ahead
 - [ ] brainfuck
+- [x] minimum path sum
