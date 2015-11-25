@@ -18,6 +18,7 @@
 - [x] file size
 - [x] ones and zeros
 - [x] rightmost char
+- [x] n mod m
 
 ### Moderate
 
