@@ -20,6 +20,7 @@
 - [x] rightmost char
 - [x] n mod m
 - [x] set intersection
+- [x] query board
 
 ### Moderate
 
