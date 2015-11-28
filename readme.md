@@ -19,6 +19,7 @@
 - [x] ones and zeros
 - [x] rightmost char
 - [x] n mod m
+- [x] set intersection
 
 ### Moderate
 
