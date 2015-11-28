@@ -21,6 +21,7 @@
 - [x] n mod m
 - [x] set intersection
 - [x] query board
+- [x] hex to decimal
 
 ### Moderate
 
