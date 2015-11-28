@@ -40,3 +40,4 @@
 - [ ] type ahead
 - [ ] brainfuck
 - [x] minimum path sum
+- [x] string searching
