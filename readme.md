@@ -41,3 +41,4 @@
 - [ ] brainfuck
 - [x] minimum path sum
 - [x] string searching
+- [x] text dollars
