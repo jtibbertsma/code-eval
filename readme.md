@@ -22,6 +22,7 @@
 - [x] set intersection
 - [x] query board
 - [x] hex to decimal
+- [x] happy numbers
 
 ### Moderate
 
