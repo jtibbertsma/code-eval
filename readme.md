@@ -23,6 +23,7 @@
 - [x] query board
 - [x] hex to decimal
 - [x] happy numbers
+- [x] simple sorting
 
 ### Moderate
 
