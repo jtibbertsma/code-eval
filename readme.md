@@ -24,6 +24,7 @@
 - [x] hex to decimal
 - [x] happy numbers
 - [x] simple sorting
+- [x] hidden digits
 
 ### Moderate
 
