@@ -25,6 +25,7 @@
 - [x] happy numbers
 - [x] simple sorting
 - [x] hidden digits
+- [x] real fake
 
 ### Moderate
 
