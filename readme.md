@@ -26,6 +26,7 @@
 - [x] simple sorting
 - [x] hidden digits
 - [x] real fake
+- [x] testing
 
 ### Moderate
 
