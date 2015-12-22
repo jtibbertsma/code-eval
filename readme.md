@@ -27,6 +27,8 @@
 - [x] hidden digits
 - [x] real fake
 - [x] testing
+- [x] multiply lists
+- [x] json menu ids
 
 ### Moderate
 
