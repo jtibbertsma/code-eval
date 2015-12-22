@@ -44,6 +44,7 @@
 - [x] decimal to binary
 - [x] remove characters
 - [x] trailing string
+- [x] array absurdity
 
 ### Hard
 
