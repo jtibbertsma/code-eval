@@ -41,6 +41,7 @@
 - [x] alternative reality
 - [x] prime numbers
 - [x] decimal to binary
+- [x] remove characters
 
 ### Hard
 
