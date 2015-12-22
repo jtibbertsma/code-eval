@@ -30,6 +30,7 @@
 - [x] multiply lists
 - [x] json menu ids
 - [x] trick or treat
+- [x] swap numbers
 
 ### Moderate
 
