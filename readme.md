@@ -42,6 +42,7 @@
 - [x] prime numbers
 - [x] decimal to binary
 - [x] remove characters
+- [x] trailing string
 
 ### Hard
 
