@@ -34,6 +34,7 @@
 - [x] swap elements
 - [x] word to digit
 - [x] unique elements
+- [x] longest word
 
 ### Moderate
 
