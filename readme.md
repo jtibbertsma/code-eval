@@ -33,6 +33,7 @@
 - [x] swap numbers
 - [x] swap elements
 - [x] word to digit
+- [x] unique elements
 
 ### Moderate
 

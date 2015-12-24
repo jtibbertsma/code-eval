@@ -1,8 +1,18 @@
-require 'set'
+module UniqueElements
+  def self.unique_elements(line)
+    line.split(/,/).uniq.join(',')
+  end
 
-File.open(ARGV[0]).each_line do |line|
-  next if line.empty?
-  line.strip!
+  def self.run(filename = ARGV[0])
+    File.open(filename) do |file|
+      file.each_line do |line|
+        line.strip!
+        next if line.empty?
 
-  puts Set.new(line.split(',')).sort.join(',')
+        puts unique_elements(line)
+      end
+    end
+  end
 end
+
+UniqueElements.run if __FILE__ == $0
