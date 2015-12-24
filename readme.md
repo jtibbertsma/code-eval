@@ -31,6 +31,7 @@
 - [x] json menu ids
 - [x] trick or treat
 - [x] swap numbers
+- [x] swap elements
 
 ### Moderate
 
