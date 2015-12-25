@@ -31,7 +31,6 @@ module StackImplementation
 
   def self.run(filename = ARGV[0])
     File.open(filename) do |file|
-      stack = Stack.new
       file.each_line do |line|
         line.strip!
         next if line.empty?
