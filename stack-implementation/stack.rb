@@ -15,10 +15,6 @@ module StackImplementation
       @accept = true
     end
 
-    def push(item)
-      @stack.push item
-    end
-
     def pop
       item = @stack.pop
       if @accept
