@@ -42,7 +42,7 @@
 - [x] stack implementation
 - [x] reverse and add
 - [x] mth to last list item
-- [x] valid parenthses
+- [x] valid parentheses
 - [x] alternative reality
 - [x] prime numbers
 - [x] decimal to binary
