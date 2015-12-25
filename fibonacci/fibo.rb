@@ -2,6 +2,8 @@ module Fibonacci
   class Fibo
     def initialize
       @cache = Hash.new { |hash, n| hash[n] = caluculate_nth_fibo(n) }
+      @cache[0] = 0
+      @cache[1] = 1
     end
 
     def nth_fibo(n)
@@ -10,14 +12,7 @@ module Fibonacci
 
     private
       def caluculate_nth_fibo(n)
-        case n
-        when 0
-          0
-        when 1
-          1
-        else
-          nth_fibo(n-1) + nth_fibo(n-2)
-        end
+        nth_fibo(n-1) + nth_fibo(n-2)
       end
   end
 
