@@ -35,6 +35,7 @@
 - [x] word to digit
 - [x] unique elements
 - [x] longest word
+- [x] armstrong numbers
 
 ### Moderate
 
