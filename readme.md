@@ -61,3 +61,5 @@
 - [x] minimum path sum
 - [x] string searching
 - [x] text dollars
+- [x] prefix expressions
+- [x] ascii decryption
