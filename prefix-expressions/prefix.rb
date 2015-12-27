@@ -3,7 +3,7 @@ module PrefixExpressions
     attr_reader :eval
 
     def initialize(num)
-      @eval = num.to_i
+      @eval = num.to_f
     end
   end
 
@@ -40,7 +40,7 @@ module PrefixExpressions
         line.strip!
         next if line.empty?
 
-        puts evaluate_expr(line)
+        puts evaluate_expr(line).to_i
       end
     end
   end
