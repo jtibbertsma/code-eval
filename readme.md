@@ -40,6 +40,7 @@
 - [x] self describing numbers
 - [x] roller coaster
 - [x] swap case
+- [x] juggling with zeros
 
 ### Moderate
 
