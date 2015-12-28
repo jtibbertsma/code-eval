@@ -7,7 +7,7 @@
 
 # Usage:
 #
-#   $ ./start.rb name-of-challenge
+#   $ ./start name-of-challenge
 
 require 'fileutils'
 
