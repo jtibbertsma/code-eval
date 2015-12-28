@@ -39,6 +39,7 @@
 - [x] split the number
 - [x] self describing numbers
 - [x] roller coaster
+- [x] swap case
 
 ### Moderate
 
