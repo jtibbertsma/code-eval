@@ -23,7 +23,7 @@ module Start
     end
 
     def camel
-      @camel ||= camelize dash
+      @camel ||= camelize
     end
 
     def code
@@ -35,8 +35,8 @@ module Start
     end
 
     private
-      def camelize(name)
-        name.gsub(/\b\w/) { |s| s.upcase }
+      def camelize
+        dash.gsub(/\b\w/) { |s| s.upcase }
             .gsub!(/\-/, '')
       end
 
