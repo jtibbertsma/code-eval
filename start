@@ -1,0 +1,99 @@
+#! /usr/bin/env ruby
+
+# This script helps me start a code eval ruby challenge. I keep typing
+# the same boilerplate everytime, so I should just automate it. Generates
+# a folder with files for code and input, and writes some boilerplate in
+# the code file.
+
+# Usage:
+#
+#   $ ./start.rb name-of-challenge
+
+require 'fileutils'
+
+module Start
+  # Keeps track of name information, such as folder name, camelcase
+  # module name, and file names.
+  class Name
+    attr_reader :dash
+
+    def initialize(name)
+      raise "Error: must supply challenge name" unless name
+      @dash = name
+    end
+
+    def camel
+      @camel ||= camelize dash
+    end
+
+    def code
+      @code ||= File.join(dash, "#{code_name}.rb")
+    end
+
+    def test
+      @test ||= File.join(dash, "test.txt")
+    end
+
+    private
+      def camelize(name)
+        name.gsub(/\b\w/) { |s| s.upcase }
+            .gsub!(/\-/, '')
+      end
+
+      def code_name
+        dash.split(/\-/).first
+      end
+  end
+
+  # ruby boilerplate code
+  def self.boilerplate(modname)
+<<-ruby
+module #{modname}
+  def self.something(line)
+
+  end
+
+  def self.run(filename = ARGV[0])
+    File.open(filename) do |file|
+      file.each_line do |line|
+        line.strip!
+        next if line.empty?
+
+        puts something(line)
+      end
+    end
+  end
+end
+
+#{modname}.run if __FILE__ == $0
+ruby
+  end
+
+  # Create a dir unless it exists.
+  def self.create_dir(name)
+    Dir.mkdir(name.dash) unless Dir.exist? name.dash
+  end
+
+  # Create the code and test files.
+  def self.create_files(name)
+    # test file
+    FileUtils.touch name.test
+
+    # code file
+    FileUtils.touch name.code
+    # only write to the file if it's empty
+    if File::Stat.new(name.code).size == 0
+      File.open(name.code, 'w') do |file|
+        file.print boilerplate(name.camel)
+      end
+    end
+  end
+
+  def self.run(name = ARGV[0])
+    name = Name.new name
+    create_dir name
+    create_files name
+  end
+end
+
+Start.run if __FILE__ == $0
