@@ -38,6 +38,7 @@
 - [x] armstrong numbers
 - [x] split the number
 - [x] self describing numbers
+- [x] roller coaster
 
 ### Moderate
 
