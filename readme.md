@@ -36,6 +36,7 @@
 - [x] unique elements
 - [x] longest word
 - [x] armstrong numbers
+- [x] split the number
 
 ### Moderate
 
