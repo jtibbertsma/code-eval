@@ -50,6 +50,7 @@
 - [x] remove characters
 - [x] trailing string
 - [x] array absurdity
+- [x] filename pattern
 
 ### Hard
 
