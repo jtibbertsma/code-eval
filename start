@@ -47,7 +47,7 @@ module Start
 
   # ruby boilerplate code
   def self.boilerplate(modname)
-<<-ruby
+<<-ruby.strip
 module #{modname}
   def self.something(line)
 
