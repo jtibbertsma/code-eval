@@ -37,6 +37,7 @@
 - [x] longest word
 - [x] armstrong numbers
 - [x] split the number
+- [x] self describing numbers
 
 ### Moderate
 
