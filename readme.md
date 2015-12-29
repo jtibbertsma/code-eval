@@ -44,6 +44,7 @@
 - [x] capitalize words
 - [x] penultimate word
 - [x] mixed content
+- [x] slang flavor
 
 ### Moderate
 
