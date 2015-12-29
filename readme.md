@@ -45,6 +45,7 @@
 - [x] penultimate word
 - [x] mixed content
 - [x] slang flavor
+- [x] string mask
 
 ### Moderate
 
