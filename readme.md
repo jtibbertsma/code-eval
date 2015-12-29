@@ -42,6 +42,7 @@
 - [x] swap case
 - [x] juggling with zeros
 - [x] capitalize words
+- [x] penultimate word
 
 ### Moderate
 
