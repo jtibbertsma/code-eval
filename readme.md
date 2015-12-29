@@ -43,6 +43,7 @@
 - [x] juggling with zeros
 - [x] capitalize words
 - [x] penultimate word
+- [x] mixed content
 
 ### Moderate
 
