@@ -41,6 +41,7 @@
 - [x] roller coaster
 - [x] swap case
 - [x] juggling with zeros
+- [x] capitalize words
 
 ### Moderate
 
