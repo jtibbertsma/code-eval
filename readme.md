@@ -46,6 +46,7 @@
 - [x] mixed content
 - [x] slang flavor
 - [x] string mask
+- [x] stepwise word
 
 ### Moderate
 
