@@ -5,11 +5,8 @@
 # a folder with files for code and input, and writes some boilerplate in
 # the code file.
 
-# Usage:
-#
-#   $ ./start name-of-challenge
-
 require 'fileutils'
+require 'optparse'
 
 module Start
   # Keeps track of name information, such as folder name, camelcase
@@ -17,9 +14,12 @@ module Start
   class Name
     attr_reader :dash
 
-    def initialize(name)
+    def initialize(name, options)
       raise "Error: must supply challenge name" unless name
-      @dash = name
+      @dash      = name
+      @code_name = options[:code]
+      @test_name = options[:test]
+      @camel     = options[:modname]
     end
 
     def camel
@@ -31,7 +31,7 @@ module Start
     end
 
     def test
-      @test ||= File.join(dash, "test.txt")
+      @test ||= File.join(dash, "#{test_name}")
     end
 
     private
@@ -41,14 +41,18 @@ module Start
       end
 
       def code_name
-        dash.split(/\-/).first
+        @code_name || dash.split(/\-/).first
+      end
+
+      def test_name
+        @test_name || 'test.txt'
       end
   end
 
   # ruby boilerplate code
-  def self.boilerplate(modname)
+  def self.boilerplate(name)
 <<-ruby.strip
-module #{modname}
+module #{name.camel}
   def self.something(line)
 
   end
@@ -65,7 +69,7 @@ module #{modname}
   end
 end
 
-#{modname}.run if __FILE__ == $0
+#{name.camel}.run if __FILE__ == $0
 ruby
   end
 
@@ -84,15 +88,47 @@ ruby
     # only write to the file if it's empty
     if File::Stat.new(name.code).size == 0
       File.open(name.code, 'w') do |file|
-        file.print boilerplate(name.camel)
+        file.print boilerplate(name)
       end
     end
   end
 
-  def self.run(name = ARGV[0])
-    name = Name.new name
+  def self.command_line_options
+    options = {}
+    OptionParser.new do |opts|
+      opts.banner = "Usage: ./start name-of-challenge [options]"
+      opts.separator ''
+
+      opts.on("-m", "--modname NAME", "Name of the module in the generated boilerplate") do |m|
+        raise "Error: #{m} is not valid ruby constant" unless m =~ /^[A-Z]\w*$/
+        options[:modname] = m
+      end
+
+      opts.on("-c", "--code NAME", "Name of the generated ruby file. Non-empty files are not overwritten.") do |c|
+        options[:code] = c[/.*(?=\.rb$)|.*/]
+      end
+
+      opts.on("-t", "--test NAME", "Name of the test file. Defaults to test.txt") do |t|
+        options[:test] = t
+      end
+
+      opts.separator ''
+      opts.on_tail("-h", "--help", "Show this message") do
+        puts opts
+        exit
+      end
+    end.parse!
+    options
+  end
+
+  def self.run(name = ARGV[0], options = {})
+    options.merge!(command_line_options)
+    name = Name.new name, options
     create_dir name
     create_files name
+  rescue RuntimeError => e
+    STDERR.puts e
+    exit 1
   end
 end
 
