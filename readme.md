@@ -47,6 +47,8 @@
 - [x] slang flavor
 - [x] string mask
 - [x] stepwise word
+- [x] calculate distance
+- [x] morse code
 
 ### Moderate
 
