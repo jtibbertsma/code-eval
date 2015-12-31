@@ -15,7 +15,7 @@ module Start
     attr_reader :dash
 
     def initialize(name, options)
-      raise "Error: must supply challenge name" unless name
+      raise "Error: must supply challenge name" unless name && name !~ /^\-/
       @dash      = name
       @code_name = options[:code]
       @test_name = options[:test]
