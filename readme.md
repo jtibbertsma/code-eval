@@ -50,6 +50,7 @@
 - [x] calculate distance
 - [x] morse code
 - [x] delta time
+- [x] time to eat
 
 ### Moderate
 
