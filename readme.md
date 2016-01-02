@@ -49,6 +49,7 @@
 - [x] stepwise word
 - [x] calculate distance
 - [x] morse code
+- [x] delta time
 
 ### Moderate
 
