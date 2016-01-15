@@ -37,7 +37,7 @@ module Start
     private
       def camelize
         dash.gsub(/\b\w/) { |s| s.upcase }
-            .gsub!(/\-/, '')
+            .gsub(/\-/, '')
       end
 
       def code_name
@@ -112,6 +112,10 @@ ruby
         options[:test] = t
       end
 
+      opts.on("-e", "--editor NAME", "Command to open files in a text editor") do |t|
+        options[:editor] = t
+      end
+
       opts.separator ''
       opts.on_tail("-h", "--help", "Show this message") do
         puts opts
@@ -123,9 +127,11 @@ ruby
 
   def self.run(name = ARGV[0], options = {})
     options.merge!(command_line_options)
+    options[:editor] ||= 'subl'
     name = Name.new name, options
     create_dir name
     create_files name
+    `#{options[:editor]} #{name.dash}/*`
   rescue RuntimeError => e
     STDERR.puts e
     exit 1
