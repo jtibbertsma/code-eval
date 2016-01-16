@@ -12,7 +12,7 @@ module Football
     team_hash = Hash.new { |hash, country| hash[country] = [] }
     countries.each_with_index do |c, i|
       i = i + 1
-      c.split(/\s+/).each { |team| team_hash[team] << i.to_s }
+      c.split(/\s+/).each { |team| team_hash[team] << i }
     end
     team_hash
   end

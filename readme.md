@@ -51,6 +51,7 @@
 - [x] morse code
 - [x] delta time
 - [x] time to eat
+- [x] lowest unique number
 
 ### Moderate
 
