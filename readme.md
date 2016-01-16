@@ -67,6 +67,7 @@
 - [x] trailing string
 - [x] array absurdity
 - [x] filename pattern
+- [x] number of ones
 
 ### Hard
 
