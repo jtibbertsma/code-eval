@@ -20,6 +20,7 @@ module Start
       @code_name = options[:code]
       @test_name = options[:test]
       @camel     = options[:modname]
+      @func      = options[:func]
     end
 
     def camel
@@ -32,6 +33,10 @@ module Start
 
     def test
       @test ||= File.join(dash, "#{test_name}")
+    end
+
+    def func
+      @func ||= "something"
     end
 
     private
@@ -53,7 +58,7 @@ module Start
   def self.boilerplate(name)
 <<-ruby.strip
 module #{name.camel}
-  def self.something(line)
+  def self.#{name.func}(line)
 
   end
 
@@ -63,7 +68,7 @@ module #{name.camel}
         line.strip!
         next if line.empty?
 
-        puts something(line)
+        puts #{name.func}(line)
       end
     end
   end
@@ -112,8 +117,12 @@ ruby
         options[:test] = t
       end
 
-      opts.on("-e", "--editor NAME", "Command to open files in a text editor") do |t|
-        options[:editor] = t
+      opts.on("-e", "--editor NAME", "Command to open files in a text editor") do |e|
+        options[:editor] = e
+      end
+
+      opts.on("-f", "--func NAME", "Name of main function") do |f|
+        options[:func] = f
       end
 
       opts.separator ''
