@@ -56,7 +56,7 @@ module Start
 
   # ruby boilerplate code
   def self.boilerplate(name)
-<<-ruby.strip
+<<-RUBY.strip
 module #{name.camel}
   def self.#{name.func}(line)
 
@@ -75,7 +75,7 @@ module #{name.camel}
 end
 
 #{name.camel}.run if __FILE__ == $0
-ruby
+RUBY
   end
 
   # Create a dir unless it exists.
