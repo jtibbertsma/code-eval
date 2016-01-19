@@ -70,6 +70,7 @@
 - [x] number of ones
 - [x] first non-repeated character
 - [x] reverse groups
+- [x] string rotation
 
 ### Hard
 
