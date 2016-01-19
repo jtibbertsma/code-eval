@@ -68,6 +68,7 @@
 - [x] array absurdity
 - [x] filename pattern
 - [x] number of ones
+- [x] first non-repeated character
 
 ### Hard
 
