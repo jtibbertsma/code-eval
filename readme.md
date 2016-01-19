@@ -69,6 +69,7 @@
 - [x] filename pattern
 - [x] number of ones
 - [x] first non-repeated character
+- [x] reverse groups
 
 ### Hard
 
