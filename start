@@ -130,7 +130,9 @@ RUBY
         puts opts
         exit
       end
-    end.parse!
+
+      opts.parse!
+    end
     options
   end
 
