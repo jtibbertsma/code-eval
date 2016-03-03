@@ -1,18 +1,19 @@
 module LuckyTickets
-  DIGIT_SUMS = Hash.new do |hash, num|
+  def self.nums_upto_n_digits_with_sum(n, sum)
     
   end
 
-  def self.sums_of_digits(n)
-    hash = Hash.new { |hash, sum| hash[sum] = 0 }
-    0.upto(('9' * n).to_i) { |i| hash[DIGIT_SUMS[i]] += 1 }
-    hash.values
+  def self.sum_count(n)
+    hi = 9 * n
+    0.upto(hi).map do |i|
+      nums_upto_n_digits_with_sum n, i
+    end
   end
 
   def self.lucky_number(line)
     num_digits = line.to_i / 2
-    sum_count = sums_of_digits(num_digits)
-    sum_count.inject(0) { |total, comb| total + comb*comb }
+    sc = sum_count(num_digits)
+    sc.inject(0) { |total, comb| total + comb*comb }
   end
 
   def self.run(filename = ARGV[0])
