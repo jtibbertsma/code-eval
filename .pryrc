@@ -4,7 +4,7 @@
 
 def load_ruby_files(directory = '.')
   print "Loading ruby files...\n\n"
-  files = `find #{directory} -type f -name *.rb`
+  files = `find #{directory} -type f -name '*.rb'`
   files.split(/\s+/).each do |f|
     begin
       load File.expand_path(f)
