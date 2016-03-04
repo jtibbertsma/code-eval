@@ -72,6 +72,7 @@
 - [x] reverse groups
 - [x] string rotation
 - [x] beat or bit
+- [x] endianness
 
 ### Hard
 
