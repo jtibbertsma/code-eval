@@ -71,6 +71,7 @@
 - [x] first non-repeated character
 - [x] reverse groups
 - [x] string rotation
+- [x] beat or bit
 
 ### Hard
 
