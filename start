@@ -102,7 +102,7 @@ RUBY
   def self.create_pryrc_symlink(name)
     orig_rc = File.join File.expand_path('.'), '.pryrc'
     new_rc = File.join File.expand_path(name.dash), '.pryrc'
-    File.symlink(orig_rc, new_rc)
+    File.symlink(orig_rc, new_rc) unless File.exist? new_rc
   end
 
   # Open new files in sublime
