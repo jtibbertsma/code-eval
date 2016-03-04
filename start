@@ -98,6 +98,18 @@ RUBY
     end
   end
 
+  # Create a symlink in the new directory to the .pryrc in the main directory
+  def self.create_pryrc_symlink(name)
+    orig_rc = File.join File.expand_path('.'), '.pryrc'
+    new_rc = File.join File.expand_path(name.dash), '.pryrc'
+    File.symlink(orig_rc, new_rc)
+  end
+
+  # Open new files in sublime
+  def self.open_files_in_editor(name, editor)
+    `#{editor} #{name.code} #{name.test}`
+  end
+
   def self.command_line_options
     options = {}
     OptionParser.new do |opts|
@@ -142,7 +154,8 @@ RUBY
     name = Name.new name, options
     create_dir name
     create_files name
-    `#{options[:editor]} #{name.dash}/*`
+    create_pryrc_symlink name
+    open_files_in_editor name, options[:editor]
   rescue RuntimeError => e
     STDERR.puts e
     exit 1
