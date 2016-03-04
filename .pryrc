@@ -2,8 +2,8 @@
 # I've been careful to wrap all code in uniquely named modules. Also, each file is
 # written so that the program isn't executed when the file is required.
 
-def load_codeeval_ruby_files(directory = '.')
-  print "Loading Code Eval ruby files...\n\n"
+def load_ruby_files(directory = '.')
+  print "Loading ruby files...\n\n"
   files = `find #{directory} -type f -name *.rb`
   files.split(/\s+/).each do |f|
     begin
@@ -15,4 +15,4 @@ def load_codeeval_ruby_files(directory = '.')
   puts "Done"
 end
 
-load_codeeval_ruby_files
+load_ruby_files
