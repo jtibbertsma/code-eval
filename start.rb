@@ -1,5 +1,3 @@
-#! /usr/bin/env ruby
-
 # This script helps me start a code eval ruby challenge. I keep typing
 # the same boilerplate everytime, so I should just automate it. Generates
 # a folder with files for code and input, and writes some boilerplate in
