@@ -54,6 +54,7 @@
 - [x] lowest unique number
 - [x] clean up the words
 - [x] the major element
+- [x] without repetitions
 
 ### Moderate
 
