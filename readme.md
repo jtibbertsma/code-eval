@@ -56,6 +56,7 @@
 - [x] the major element
 - [x] without repetitions
 - [x] beautiful strings
+- [x] compressed sequence
 
 ### Moderate
 
