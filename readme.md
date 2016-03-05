@@ -55,6 +55,7 @@
 - [x] clean up the words
 - [x] the major element
 - [x] without repetitions
+- [x] beautiful strings
 
 ### Moderate
 
