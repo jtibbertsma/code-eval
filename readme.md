@@ -52,6 +52,7 @@
 - [x] delta time
 - [x] time to eat
 - [x] lowest unique number
+- [x] clean up the words
 
 ### Moderate
 
