@@ -77,6 +77,7 @@
 - [x] endianness
 - [x] roman and arabic
 - [x] organizational hierarchy
+- [x] jolly jumpers
 
 ### Hard
 
