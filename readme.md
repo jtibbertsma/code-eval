@@ -53,6 +53,7 @@
 - [x] time to eat
 - [x] lowest unique number
 - [x] clean up the words
+- [x] the major element
 
 ### Moderate
 
