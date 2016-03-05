@@ -74,6 +74,7 @@
 - [x] beat or bit
 - [x] endianness
 - [x] roman and arabic
+- [x] organizational hierarchy
 
 ### Hard
 
