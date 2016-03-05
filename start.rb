@@ -7,10 +7,16 @@ require 'fileutils'
 require 'optparse'
 
 module Start
+  # command to open files in a text editor
+  DEFAULT_EDITOR = 'subl'
+
   # Keeps track of name information, such as folder name, camelcase
   # module name, and file names.
   class Name
     attr_reader :dash
+
+    DEFAULT_FUNCNAME = 'something'
+    DEFAULT_TESTNAME = 'test.txt'
 
     def initialize(name, options)
       raise "Error: must supply challenge name" unless name && name !~ /^\-/
@@ -34,7 +40,7 @@ module Start
     end
 
     def func
-      @func ||= "something"
+      @func ||= DEFAULT_FUNCNAME
     end
 
     private
@@ -48,7 +54,7 @@ module Start
       end
 
       def test_name
-        @test_name || 'test.txt'
+        @test_name || DEFAULT_TESTNAME
       end
   end
 
@@ -148,8 +154,9 @@ RUBY
 
   def self.run(name = ARGV[0], options = {})
     options.merge!(command_line_options)
-    options[:editor] ||= 'subl'
+    options[:editor] ||= DEFAULT_EDITOR
     name = Name.new name, options
+
     create_dir name
     create_files name
     create_pryrc_symlink name
