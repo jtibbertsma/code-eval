@@ -73,6 +73,7 @@
 - [x] string rotation
 - [x] beat or bit
 - [x] endianness
+- [x] roman and arabic
 
 ### Hard
 
