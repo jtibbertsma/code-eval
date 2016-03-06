@@ -60,6 +60,7 @@
 - [x] find the highest score
 - [x] find a writer
 - [x] not so clever
+- [x] lettercase percentage ratio
 
 ### Moderate
 
