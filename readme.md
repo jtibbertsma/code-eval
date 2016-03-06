@@ -85,6 +85,7 @@
 - [x] jolly jumpers
 - [x] lowest common ancestor
 - [x] counting primes
+- [x] chain inspection
 
 ### Hard
 
