@@ -59,6 +59,7 @@
 - [x] compressed sequence
 - [x] find the highest score
 - [x] find a writer
+- [x] not so clever
 
 ### Moderate
 
