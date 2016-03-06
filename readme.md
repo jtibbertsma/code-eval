@@ -82,6 +82,7 @@
 - [x] roman and arabic
 - [x] organizational hierarchy
 - [x] jolly jumpers
+- [x] lowest common ancestor
 
 ### Hard
 
