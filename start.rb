@@ -121,7 +121,7 @@ RUBY
       opts.separator ''
 
       opts.on("-m", "--modname NAME", "Name of the module in the generated boilerplate") do |m|
-        raise "Error: #{m} is not valid ruby constant" unless m =~ /^[A-Z]\w*$/
+        raise "Error: '#{m}' is not valid ruby constant" unless m =~ /^[A-Z]\w*$/
         options[:modname] = m
       end
 
