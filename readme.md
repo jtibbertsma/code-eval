@@ -83,6 +83,7 @@
 - [x] organizational hierarchy
 - [x] jolly jumpers
 - [x] lowest common ancestor
+- [x] counting primes
 
 ### Hard
 
