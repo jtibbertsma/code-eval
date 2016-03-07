@@ -73,12 +73,17 @@ module CodeLikeHuffman
       end
 
       def sym
-        @lchild.sym
+        s = @lchild.sym
+        if Node === @rchild
+          r = @rchild.sym
+          s = r if r < s
+        end
+        s
       end
 
       protected
         def eq_compare(other)
-          case other.class
+          case other
           when Sym
             -1
           else
