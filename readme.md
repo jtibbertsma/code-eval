@@ -103,3 +103,4 @@
 - [x] prefix expressions
 - [x] ascii decryption
 - [x] alphabet blocks
+- [x] following integer
