@@ -61,6 +61,7 @@
 - [x] find a writer
 - [x] not so clever
 - [x] lettercase percentage ratio
+- [x] roman numerals
 
 ### Moderate
 
