@@ -102,3 +102,4 @@
 - [x] text dollars
 - [x] prefix expressions
 - [x] ascii decryption
+- [x] alphabet blocks
