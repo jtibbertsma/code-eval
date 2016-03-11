@@ -1,13 +1,12 @@
 module RomanNumerals
   class Converter
+    attr_reader :roman
+    alias to_s roman
+
     def initialize(line)
       @n = line.to_i
       @roman = ''
       convert!
-    end
-
-    def to_s
-      @roman
     end
 
     private

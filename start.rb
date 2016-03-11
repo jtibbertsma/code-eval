@@ -10,6 +10,20 @@ module Start
   # command to open files in a text editor
   DEFAULT_EDITOR = 'subl'
 
+  class CamelizeError < ArgumentError
+    def initialize(str)
+      super "Error: Cannot convert '#{str}' into a Ruby contant"
+    end
+  end
+
+  # Convert a string into a valid ruby Constant, or raise an ArgumentError if that's
+  # impossible.
+  def self.camelize(str)
+    raise CamelizeError.new(str) unless (pos = str =~ /[a-z]/i)
+    str = str[pos..-1]
+    str.gsub(/(?<![0-9a-z])\w/i) { |s| s.upcase }.gsub(/[_\W]/, '')
+  end
+
   # Keeps track of name information, such as folder name, camelcase
   # module name, and file names.
   class Name
@@ -19,7 +33,7 @@ module Start
     DEFAULT_TESTNAME = 'test.txt'
 
     def initialize(name, options)
-      raise "Error: must supply challenge name" unless name && name !~ /^\-/
+      raise ArgumentError.new("Error: must supply challenge name") unless name && name !~ /^\-/
       @dash      = name
       @code_name = options[:code]
       @test_name = options[:test]
@@ -28,7 +42,7 @@ module Start
     end
 
     def camel
-      @camel ||= camelize
+      @camel ||= Start.camelize dash
     end
 
     def code
@@ -44,13 +58,8 @@ module Start
     end
 
     private
-      def camelize
-        dash.gsub(/\b\w/) { |s| s.upcase }
-            .gsub(/\-/, '')
-      end
-
       def code_name
-        @code_name || dash.split(/\-/).first
+        @code_name || dash.split(/[_\W]/).first
       end
 
       def test_name
@@ -58,13 +67,18 @@ module Start
       end
   end
 
-  # ruby boilerplate code
-  def self.boilerplate(name)
-<<-RUBY.strip
-module #{name.camel}
-  def self.#{name.func}(line)
+  # encapsulates the ruby boilerplate code
+  class RubyBoilerplate
+    def initialize(name, options)
+      @name = name
+      @isclass = options[:class_boilerplate]
+      @func = @isclass ? Start.camelize(name.func) : name.func
+    end
 
-  end
+    def to_s
+<<-END.strip
+module #{@name.camel}
+  #{main_portion}
 
   def self.run(filename = ARGV[0])
     File.open(filename) do |file|
@@ -72,14 +86,46 @@ module #{name.camel}
         line.strip!
         next if line.empty?
 
-        puts #{name.func}(line)
+        puts #{initial_call}(line)
       end
     end
   end
 end
 
-#{name.camel}.run if __FILE__ == $0
-RUBY
+#{@name.camel}.run if __FILE__ == $0
+END
+    end
+
+    private
+      def initial_call
+        @isclass ? "#{@func}.new" : @func
+      end
+
+      def main_portion
+        @isclass ? class_main : method_main
+      end
+
+      def class_main
+<<-END.strip
+class #{@func}
+    def initialize(line)
+
+    end
+
+    def to_s
+
+    end
+  end
+END
+      end
+
+      def method_main
+<<-END.strip
+def #{@func}
+
+  end
+END
+      end
   end
 
   # Create a dir unless it exists.
@@ -88,7 +134,7 @@ RUBY
   end
 
   # Create the code and test files.
-  def self.create_files(name)
+  def self.create_files(name, boilerplate)
     # test file
     FileUtils.touch name.test
 
@@ -97,7 +143,7 @@ RUBY
     # only write to the file if it's empty
     if File::Stat.new(name.code).size == 0
       File.open(name.code, 'w') do |file|
-        file.print boilerplate(name)
+        file.print boilerplate
       end
     end
   end
@@ -121,8 +167,7 @@ RUBY
       opts.separator ''
 
       opts.on("-m", "--modname NAME", "Name of the module in the generated boilerplate") do |m|
-        raise "Error: '#{m}' is not valid ruby constant" unless m =~ /^[A-Z]\w*$/
-        options[:modname] = m
+        options[:modname] = camelize m
       end
 
       opts.on("-c", "--code NAME", "Name of the generated ruby file. Non-empty files are not overwritten.") do |c|
@@ -137,14 +182,18 @@ RUBY
         options[:editor] = e
       end
 
-      opts.on("-f", "--func NAME", "Name of main function") do |f|
+      opts.on("-f", "--func NAME", "Name of main function or class") do |f|
         options[:func] = f
+      end
+
+      opts.on("-b", "--class-boilerplate", "Use the class version of the boilerplate code") do
+        options[:class_boilerplate] = :on
       end
 
       opts.separator ''
       opts.on_tail("-h", "--help", "Show this message") do
         puts opts
-        exit 2
+        options[:help] = :printed
       end
 
       opts.parse!
@@ -154,17 +203,20 @@ RUBY
 
   def self.run(name = ARGV[0], options = {})
     options.merge!(command_line_options)
+    return 2 if options[:help]
     options[:editor] ||= DEFAULT_EDITOR
     name = Name.new name, options
+    boilerplate = RubyBoilerplate.new name, options
 
     create_dir name
-    create_files name
+    create_files name, boilerplate
     create_pryrc_symlink name
     open_files_in_editor name, options[:editor]
-  rescue RuntimeError => e
+    0
+  rescue StandardError => e
     STDERR.puts e
-    exit 1
+    1
   end
 end
 
-Start.run if __FILE__ == $0
+exit(Start.run) if __FILE__ == $0
