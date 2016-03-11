@@ -121,7 +121,7 @@ END
 
       def method_main
 <<-END.strip
-def #{@func}
+def #{@func}(line)
 
   end
 END
@@ -201,8 +201,8 @@ END
     options
   end
 
-  def self.run(name = ARGV[0], options = {})
-    options.merge!(command_line_options)
+  def self.run(name = ARGV[0], options = {}, cl = true)
+    options.merge!(command_line_options) if cl
     return 2 if options[:help]
     options[:editor] ||= DEFAULT_EDITOR
     name = Name.new name, options
