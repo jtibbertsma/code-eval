@@ -62,6 +62,7 @@
 - [x] not so clever
 - [x] lettercase percentage ratio
 - [x] roman numerals
+- [x] panacea - true or false
 
 ### Moderate
 
