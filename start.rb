@@ -121,7 +121,7 @@ END
 
       def method_main
 <<-END.strip
-def #{@func}(line)
+def self.#{@func}(line)
 
   end
 END
