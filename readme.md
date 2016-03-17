@@ -64,6 +64,7 @@
 - [x] roman numerals
 - [x] panacea - true or false
 - [x] simple or trump
+- [x] age distribution
 
 ### Moderate
 
